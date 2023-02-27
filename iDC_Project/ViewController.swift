@@ -17,6 +17,7 @@ class ViewController: UITableViewController {
         navigationItemSetting()
     }
     
+    // MARK: - Setup Code
     func setupNavigation() {
         self.navigationController?.navigationBar.backgroundColor = .black
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -25,14 +26,14 @@ class ViewController: UITableViewController {
     }
     
     func navigationItemSetting() {
-        let rightButtn = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(pressButton(_:)))
+        let rightButtn = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(pressButton(_:)))
         self.navigationItem.rightBarButtonItem = rightButtn
     }
     
     @IBAction func pressButton(_ sender: UIBarButtonItem) {
-        let settingView = UIViewController()
-        settingView.view.backgroundColor = .black
-        self.navigationController?.pushViewController(settingView, animated: true)
+        let addView = UIViewController()
+        addView.view.backgroundColor = .black
+        self.navigationController?.pushViewController(addView, animated: true)
     }
 
     // MARK: - Table view data source

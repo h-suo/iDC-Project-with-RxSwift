@@ -16,6 +16,7 @@ class TabBarController: UITabBarController {
         setupTabBarItem()
     }
     
+    // MARK: - Setup Code
     func setupTabBar() {
         self.tabBar.tintColor = .white
         self.tabBar.unselectedItemTintColor = .gray
@@ -32,6 +33,16 @@ class TabBarController: UITabBarController {
         secondVC.tabBarItem.image = UIImage(systemName: "message")
         secondVC.tabBarItem.title = "message"
         
-        viewControllers = [firstVC, secondVC]
+        let thirdVC = UINavigationController(rootViewController: MessageViewController())
+        thirdVC.view.backgroundColor = .black
+        thirdVC.tabBarItem.image = UIImage(systemName: "bell.fill")
+        thirdVC.tabBarItem.title = "alarm"
+        
+        let fourthVC = UINavigationController(rootViewController: MessageViewController())
+        fourthVC.view.backgroundColor = .black
+        fourthVC.tabBarItem.image = UIImage(systemName: "gearshape")
+        fourthVC.tabBarItem.title = "setting"
+        
+        viewControllers = [firstVC, secondVC, thirdVC, fourthVC]
     }
 }
