@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43504EE7767E39FBB48F2381 /* Pods_iDC_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0185F4825B9C887EF75F28F /* Pods_iDC_Project.framework */; };
 		454BAD1F29ADA0B100823368 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD1E29ADA0B100823368 /* AlarmViewController.swift */; };
 		454BAD2129ADA0C800823368 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD2029ADA0C800823368 /* SettingViewController.swift */; };
 		454BAD2329ADA1B700823368 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD2229ADA1B700823368 /* AddPostViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B2F435EE178C706A92DA3A2 /* Pods-iDC_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDC_Project.release.xcconfig"; path = "Target Support Files/Pods-iDC_Project/Pods-iDC_Project.release.xcconfig"; sourceTree = "<group>"; };
 		454BAD1E29ADA0B100823368 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		454BAD2029ADA0C800823368 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		454BAD2229ADA1B700823368 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		4577550729A7813B00EA8AFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4577550D29AAE27B00EA8AFB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4577550F29AAE8C900EA8AFB /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		60EC35E378E18D626A2A9CDF /* Pods-iDC_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDC_Project.debug.xcconfig"; path = "Target Support Files/Pods-iDC_Project/Pods-iDC_Project.debug.xcconfig"; sourceTree = "<group>"; };
+		A0185F4825B9C887EF75F28F /* Pods_iDC_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iDC_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43504EE7767E39FBB48F2381 /* Pods_iDC_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +108,8 @@
 			children = (
 				457754F829A7813A00EA8AFB /* iDC_Project */,
 				457754F729A7813A00EA8AFB /* Products */,
+				9EBFF9485F39E3DEF3808BCF /* Pods */,
+				B9C757E77420B0E8B10B237F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +135,24 @@
 			path = iDC_Project;
 			sourceTree = "<group>";
 		};
+		9EBFF9485F39E3DEF3808BCF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60EC35E378E18D626A2A9CDF /* Pods-iDC_Project.debug.xcconfig */,
+				3B2F435EE178C706A92DA3A2 /* Pods-iDC_Project.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B9C757E77420B0E8B10B237F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0185F4825B9C887EF75F28F /* Pods_iDC_Project.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +160,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4577550A29A7813B00EA8AFB /* Build configuration list for PBXNativeTarget "iDC_Project" */;
 			buildPhases = (
+				52C65A1540EE2C662BA5E3F8 /* [CP] Check Pods Manifest.lock */,
 				457754F229A7813A00EA8AFB /* Sources */,
 				457754F329A7813A00EA8AFB /* Frameworks */,
 				457754F429A7813A00EA8AFB /* Resources */,
+				5A86BBD6435BC05D1D02B8FB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,6 +219,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52C65A1540EE2C662BA5E3F8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iDC_Project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A86BBD6435BC05D1D02B8FB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iDC_Project/Pods-iDC_Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iDC_Project/Pods-iDC_Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iDC_Project/Pods-iDC_Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		457754F229A7813A00EA8AFB /* Sources */ = {
@@ -342,6 +411,7 @@
 		};
 		4577550B29A7813B00EA8AFB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60EC35E378E18D626A2A9CDF /* Pods-iDC_Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -369,6 +439,7 @@
 		};
 		4577550C29A7813B00EA8AFB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B2F435EE178C706A92DA3A2 /* Pods-iDC_Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
