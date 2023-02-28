@@ -23,7 +23,7 @@ class HomeTableViewCell: UITableViewCell {
     let descriptionLabel: UILabel = {
         let dl = UILabel()
         dl.font = UIFont.systemFont(ofSize: 14)
-        dl.textColor = .systemFill
+        dl.textColor = .gray
         dl.numberOfLines = 1
         
         return dl
@@ -32,7 +32,7 @@ class HomeTableViewCell: UITableViewCell {
     let timeLabel: UILabel = {
         let tl = UILabel()
         tl.font = UIFont.systemFont(ofSize: 14)
-        tl.textColor = .systemFill
+        tl.textColor = .gray
         
         return tl
     }()
@@ -58,20 +58,19 @@ class HomeTableViewCell: UITableViewCell {
     
     // - MARK: Setup Constraints
     func setConstraints() {
-        
         titleLabel.snp.makeConstraints { make in
             make.bottom.equalTo(descriptionLabel.snp.top).offset(-4)
-            make.leading.equalToSuperview().offset(12)
-            make.trailing.equalToSuperview().offset(-12)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
         descriptionLabel.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.leading.equalToSuperview().offset(12)
-            make.trailing.equalToSuperview().offset(-12)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
         timeLabel.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(4)
-            make.leading.equalToSuperview().offset(12)
+            make.leading.equalToSuperview().offset(20)
         }
     }
 

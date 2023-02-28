@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class MessageTableViewCell: UITableViewCell {
 
@@ -57,20 +58,19 @@ class MessageTableViewCell: UITableViewCell {
     
     // - MARK: Setup Constraints
     func setConstraints() {
-        
         nameLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(12)
+            make.leading.equalToSuperview().offset(20)
             make.top.equalToSuperview().offset(4)
             make.width.equalTo(40)
         }
         messageLabel.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(4)
-            make.leading.equalToSuperview().offset(12)
-            make.trailing.equalToSuperview().offset(12)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(20)
         }
         timeLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(4)
-            make.trailing.equalToSuperview().offset(-12)
+            make.trailing.equalToSuperview().offset(-20)
         }
     }
 

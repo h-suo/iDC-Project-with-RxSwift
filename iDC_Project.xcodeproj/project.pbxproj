@@ -14,6 +14,13 @@
 		454BAD2629ADA64800823368 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD2529ADA64800823368 /* HomeTableViewCell.swift */; };
 		454BAD2829ADA66600823368 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD2729ADA66600823368 /* MessageTableViewCell.swift */; };
 		454BAD2A29ADA68000823368 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD2929ADA68000823368 /* AlarmTableViewCell.swift */; };
+		454BAD2C29ADBFBA00823368 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD2B29ADBFBA00823368 /* HomeViewModel.swift */; };
+		454BAD2E29ADBFC800823368 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD2D29ADBFC800823368 /* MessageViewModel.swift */; };
+		454BAD3029ADBFD300823368 /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD2F29ADBFD300823368 /* AlarmViewModel.swift */; };
+		454BAD3229ADBFDC00823368 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD3129ADBFDC00823368 /* SettingViewModel.swift */; };
+		454BAD3429ADBFE900823368 /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD3329ADBFE900823368 /* AddPostViewModel.swift */; };
+		454BAD3629ADC2E500823368 /* PostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD3529ADC2E500823368 /* PostForm.swift */; };
+		454BAD3829ADCD4300823368 /* ViewPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD3729ADCD4300823368 /* ViewPost.swift */; };
 		457754FA29A7813A00EA8AFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457754F929A7813A00EA8AFB /* AppDelegate.swift */; };
 		457754FC29A7813A00EA8AFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457754FB29A7813A00EA8AFB /* SceneDelegate.swift */; };
 		457754FE29A7813A00EA8AFB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457754FD29A7813A00EA8AFB /* HomeViewController.swift */; };
@@ -31,6 +38,13 @@
 		454BAD2529ADA64800823368 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		454BAD2729ADA66600823368 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		454BAD2929ADA68000823368 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		454BAD2B29ADBFBA00823368 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		454BAD2D29ADBFC800823368 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		454BAD2F29ADBFD300823368 /* AlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
+		454BAD3129ADBFDC00823368 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		454BAD3329ADBFE900823368 /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
+		454BAD3529ADC2E500823368 /* PostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostForm.swift; sourceTree = "<group>"; };
+		454BAD3729ADCD4300823368 /* ViewPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPost.swift; sourceTree = "<group>"; };
 		457754F629A7813A00EA8AFB /* iDC_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iDC_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		457754F929A7813A00EA8AFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		457754FB29A7813A00EA8AFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +96,12 @@
 		454BAD1C29AD9FAB00823368 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				454BAD3729ADCD4300823368 /* ViewPost.swift */,
+				454BAD2B29ADBFBA00823368 /* HomeViewModel.swift */,
+				454BAD2D29ADBFC800823368 /* MessageViewModel.swift */,
+				454BAD2F29ADBFD300823368 /* AlarmViewModel.swift */,
+				454BAD3129ADBFDC00823368 /* SettingViewModel.swift */,
+				454BAD3329ADBFE900823368 /* AddPostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -89,6 +109,7 @@
 		454BAD1D29AD9FBD00823368 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				454BAD3529ADC2E500823368 /* PostForm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -141,7 +162,6 @@
 				60EC35E378E18D626A2A9CDF /* Pods-iDC_Project.debug.xcconfig */,
 				3B2F435EE178C706A92DA3A2 /* Pods-iDC_Project.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -269,13 +289,20 @@
 			files = (
 				457754FE29A7813A00EA8AFB /* HomeViewController.swift in Sources */,
 				4577550E29AAE27B00EA8AFB /* TabBarController.swift in Sources */,
+				454BAD3629ADC2E500823368 /* PostForm.swift in Sources */,
 				454BAD1F29ADA0B100823368 /* AlarmViewController.swift in Sources */,
+				454BAD3829ADCD4300823368 /* ViewPost.swift in Sources */,
 				454BAD2829ADA66600823368 /* MessageTableViewCell.swift in Sources */,
 				4577551029AAE8C900EA8AFB /* MessageViewController.swift in Sources */,
 				454BAD2329ADA1B700823368 /* AddPostViewController.swift in Sources */,
 				457754FA29A7813A00EA8AFB /* AppDelegate.swift in Sources */,
+				454BAD2C29ADBFBA00823368 /* HomeViewModel.swift in Sources */,
+				454BAD3029ADBFD300823368 /* AlarmViewModel.swift in Sources */,
 				454BAD2A29ADA68000823368 /* AlarmTableViewCell.swift in Sources */,
+				454BAD3229ADBFDC00823368 /* SettingViewModel.swift in Sources */,
 				454BAD2629ADA64800823368 /* HomeTableViewCell.swift in Sources */,
+				454BAD3429ADBFE900823368 /* AddPostViewModel.swift in Sources */,
+				454BAD2E29ADBFC800823368 /* MessageViewModel.swift in Sources */,
 				454BAD2129ADA0C800823368 /* SettingViewController.swift in Sources */,
 				457754FC29A7813A00EA8AFB /* SceneDelegate.swift in Sources */,
 			);

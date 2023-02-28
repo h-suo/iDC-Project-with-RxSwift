@@ -18,6 +18,7 @@ class TabBarController: UITabBarController {
     
     // MARK: - Setup Code
     func setupTabBar() {
+        self.tabBar.barTintColor = .black
         self.tabBar.tintColor = .white
         self.tabBar.unselectedItemTintColor = .gray
     }
