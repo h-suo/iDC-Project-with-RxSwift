@@ -6,6 +6,10 @@ target 'iDC_Project' do
   use_frameworks!
 
 pod 'SnapKit'
+pod 'RxSwift'
+pod 'RxCocoa'
+pod 'RxOptional'
+pod 'RxViewController'
 
   # Pods for iDC_Project
 
