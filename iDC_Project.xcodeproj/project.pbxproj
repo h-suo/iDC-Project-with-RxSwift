@@ -39,6 +39,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		454BAD1A29AD9E8F00823368 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				457754F929A7813A00EA8AFB /* AppDelegate.swift */,
+				457754FB29A7813A00EA8AFB /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		454BAD1B29AD9F7000823368 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4577550D29AAE27B00EA8AFB /* TabBarController.swift */,
+				457754FD29A7813A00EA8AFB /* ViewController.swift */,
+				4577550F29AAE8C900EA8AFB /* MessageViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		454BAD1C29AD9FAB00823368 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		454BAD1D29AD9FBD00823368 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		457754ED29A7813A00EA8AFB = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +91,10 @@
 		457754F829A7813A00EA8AFB /* iDC_Project */ = {
 			isa = PBXGroup;
 			children = (
-				457754F929A7813A00EA8AFB /* AppDelegate.swift */,
-				457754FB29A7813A00EA8AFB /* SceneDelegate.swift */,
-				4577550D29AAE27B00EA8AFB /* TabBarController.swift */,
-				457754FD29A7813A00EA8AFB /* ViewController.swift */,
-				4577550F29AAE8C900EA8AFB /* MessageViewController.swift */,
+				454BAD1A29AD9E8F00823368 /* Delegate */,
+				454BAD1D29AD9FBD00823368 /* Model */,
+				454BAD1B29AD9F7000823368 /* View */,
+				454BAD1C29AD9FAB00823368 /* ViewModel */,
 				4577550229A7813B00EA8AFB /* Assets.xcassets */,
 				4577550429A7813B00EA8AFB /* LaunchScreen.storyboard */,
 				4577550729A7813B00EA8AFB /* Info.plist */,
