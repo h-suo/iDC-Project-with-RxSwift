@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class HomeViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +31,7 @@ class ViewController: UITableViewController {
     }
     
     @IBAction func pressButton(_ sender: UIBarButtonItem) {
-        let addView = UIViewController()
-        addView.view.backgroundColor = .black
+        let addView = AddPostViewController()
         self.navigationController?.pushViewController(addView, animated: true)
     }
 

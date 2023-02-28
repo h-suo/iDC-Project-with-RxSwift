@@ -23,7 +23,7 @@ class TabBarController: UITabBarController {
     }
     
     func setupTabBarItem() {
-        let firstVC = UINavigationController(rootViewController: ViewController())
+        let firstVC = UINavigationController(rootViewController: HomeViewController())
         firstVC.tabBarItem.selectedImage = UIImage(systemName: "house")
         firstVC.tabBarItem.image = UIImage(systemName: "house.fill")
         firstVC.tabBarItem.title = "home"
@@ -33,12 +33,12 @@ class TabBarController: UITabBarController {
         secondVC.tabBarItem.image = UIImage(systemName: "message")
         secondVC.tabBarItem.title = "message"
         
-        let thirdVC = UINavigationController(rootViewController: MessageViewController())
+        let thirdVC = UINavigationController(rootViewController: AlarmViewController())
         thirdVC.view.backgroundColor = .black
         thirdVC.tabBarItem.image = UIImage(systemName: "bell.fill")
         thirdVC.tabBarItem.title = "alarm"
         
-        let fourthVC = UINavigationController(rootViewController: MessageViewController())
+        let fourthVC = UINavigationController(rootViewController: SettingViewController())
         fourthVC.view.backgroundColor = .black
         fourthVC.tabBarItem.image = UIImage(systemName: "gearshape")
         fourthVC.tabBarItem.title = "setting"
