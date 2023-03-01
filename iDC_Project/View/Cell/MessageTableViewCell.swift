@@ -10,7 +10,7 @@ import SnapKit
 
 class MessageTableViewCell: UITableViewCell {
 
-    // - MARK: Setup UIKit
+    // MARK: - Setup UIKit
     let nameLabel: UILabel = {
         let nl = UILabel()
         nl.font = UIFont.systemFont(ofSize: 18)
@@ -42,7 +42,7 @@ class MessageTableViewCell: UITableViewCell {
         setupView()
     }
     
-    // - MARK: Setup View
+    // MARK: - Setup View
     func setupView() {
         
         self.addSubview(nameLabel)
@@ -56,7 +56,7 @@ class MessageTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // - MARK: Setup Constraints
+    // MARK: - Setup Constraints
     func setConstraints() {
         nameLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)

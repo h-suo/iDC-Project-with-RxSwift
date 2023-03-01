@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 class AddPostViewController: UIViewController, UITextViewDelegate {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,13 +37,23 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
         
     }
     
-    // - MARK: Setup UIKit
+    // MARK: - Setup UIKit
+    let titleTextField: UITextField = {
+        let ttf = UITextField()
+        ttf.borderStyle = .roundedRect
+        ttf.placeholder = "title"
+        ttf.backgroundColor = .systemFill
+        ttf.font = .systemFont(ofSize: 20)
+        
+        return ttf
+    }()
+    
     let textView: UITextView = {
         let tf = UITextView()
         tf.backgroundColor = .systemFill
         tf.font = .systemFont(ofSize: 18)
         tf.text = "Please enter your content."
-        tf.textColor = .gray
+        tf.textColor = .systemGray2
         tf.layer.cornerRadius = 4
         
         return tf
@@ -59,6 +69,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
         return dl
     }()
     
+    // MARK: - Setup TextView
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == "Please enter your content." {
             textView.text = nil
@@ -81,21 +92,28 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
         self.view.endEditing(true)
     }
     
-    // - MARK: Setup View
+    // MARK: - Setup View
     func setupView() {
         self.view.backgroundColor = .black
+        self.view.addSubview(titleTextField)
         self.view.addSubview(textView)
         self.view.addSubview(textCountLabel)
         
         setConstraints()
     }
     
-    // - MARK: Setup Constraints
+    // MARK: - Setup Constraints
     func setConstraints() {
-        textView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+        titleTextField.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(12)
+            make.trailing.equalToSuperview().offset(-12)
+            make.height.equalTo(40)
             make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+        }
+        textView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(12)
+            make.trailing.equalToSuperview().offset(-12)
+            make.top.equalTo(titleTextField.snp.bottom).offset(20)
             make.height.equalTo(300)
         }
         textCountLabel.snp.makeConstraints { make in

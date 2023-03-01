@@ -12,6 +12,7 @@ import RxCocoa
 class HomeViewController: UITableViewController {
     
     let cellId = "HomeTableViewCell"
+    
     let viewModel = HomeViewModel()
     var disposeBag = DisposeBag()
     

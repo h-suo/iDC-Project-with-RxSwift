@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
 
         //viewcontroller 세팅
-        let tabBarController = TabBarController()
+        let tabBarController = LoginViewController()
         //첫 화면에 viewController을 띄우기
         window?.rootViewController = tabBarController
         //화면 보이게 하기

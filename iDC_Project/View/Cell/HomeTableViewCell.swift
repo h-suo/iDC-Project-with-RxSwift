@@ -10,7 +10,7 @@ import SnapKit
 
 class HomeTableViewCell: UITableViewCell {
     
-    // - MARK: Setup UIKit
+    // MARK: - Setup UIKit
     let titleLabel: UILabel = {
         let tl = UILabel()
         tl.font = UIFont.systemFont(ofSize: 18)
@@ -42,8 +42,9 @@ class HomeTableViewCell: UITableViewCell {
         setupView()
     }
     
-    // - MARK: Setup View
+    // MARK: - Setup View
     func setupView() {
+        self.backgroundColor = .black
         
         self.addSubview(titleLabel)
         self.addSubview(descriptionLabel)
@@ -56,7 +57,7 @@ class HomeTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // - MARK: Setup Constraints
+    // MARK: - Setup Constraints
     func setConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.bottom.equalTo(descriptionLabel.snp.top).offset(-4)
