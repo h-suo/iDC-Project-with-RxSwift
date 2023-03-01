@@ -12,16 +12,19 @@ struct ViewPost {
     var title: String
     var description: String
     var comment: [String]
+    var time: String
     
     init(_ item: PostForm) {
         title = item.title
         description = item.description
         comment = item.comment
+        time = item.time
     }
     
-    init(title: String, description: String, comment: [String]) {
+    init(title: String, description: String, comment: [String], time: String) {
         self.title = title
         self.description = description
         self.comment = comment
+        self.time = time
     }
 }

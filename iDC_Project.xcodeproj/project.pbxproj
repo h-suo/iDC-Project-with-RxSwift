@@ -28,7 +28,8 @@
 		4577550629A7813B00EA8AFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4577550429A7813B00EA8AFB /* LaunchScreen.storyboard */; };
 		4577550E29AAE27B00EA8AFB /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4577550D29AAE27B00EA8AFB /* TabBarController.swift */; };
 		4577551029AAE8C900EA8AFB /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4577550F29AAE8C900EA8AFB /* MessageViewController.swift */; };
-		45D85C5B29AF273C0057FB15 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D85C5A29AF273C0057FB15 /* LoginViewController.swift */; };
+		45D85C5B29AF273C0057FB15 /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D85C5A29AF273C0057FB15 /* SignViewController.swift */; };
+		45D85C5E29AF667B0057FB15 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D85C5D29AF667B0057FB15 /* Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +56,8 @@
 		4577550729A7813B00EA8AFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4577550D29AAE27B00EA8AFB /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4577550F29AAE8C900EA8AFB /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		45D85C5A29AF273C0057FB15 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		45D85C5A29AF273C0057FB15 /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
+		45D85C5D29AF667B0057FB15 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		60EC35E378E18D626A2A9CDF /* Pods-iDC_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDC_Project.debug.xcconfig"; path = "Target Support Files/Pods-iDC_Project/Pods-iDC_Project.debug.xcconfig"; sourceTree = "<group>"; };
 		A0185F4825B9C887EF75F28F /* Pods_iDC_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iDC_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,7 +86,7 @@
 		454BAD1B29AD9F7000823368 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				45D85C5A29AF273C0057FB15 /* LoginViewController.swift */,
+				45D85C5A29AF273C0057FB15 /* SignViewController.swift */,
 				4577550D29AAE27B00EA8AFB /* TabBarController.swift */,
 				457754FD29A7813A00EA8AFB /* HomeViewController.swift */,
 				4577550F29AAE8C900EA8AFB /* MessageViewController.swift */,
@@ -152,11 +154,20 @@
 				454BAD1D29AD9FBD00823368 /* Model */,
 				454BAD1B29AD9F7000823368 /* View */,
 				454BAD1C29AD9FAB00823368 /* ViewModel */,
+				45D85C5C29AF66570057FB15 /* Utils */,
 				4577550229A7813B00EA8AFB /* Assets.xcassets */,
 				4577550429A7813B00EA8AFB /* LaunchScreen.storyboard */,
 				4577550729A7813B00EA8AFB /* Info.plist */,
 			);
 			path = iDC_Project;
+			sourceTree = "<group>";
+		};
+		45D85C5C29AF66570057FB15 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				45D85C5D29AF667B0057FB15 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		9EBFF9485F39E3DEF3808BCF /* Pods */ = {
@@ -294,7 +305,7 @@
 				4577550E29AAE27B00EA8AFB /* TabBarController.swift in Sources */,
 				454BAD3629ADC2E500823368 /* PostForm.swift in Sources */,
 				454BAD1F29ADA0B100823368 /* AlarmViewController.swift in Sources */,
-				45D85C5B29AF273C0057FB15 /* LoginViewController.swift in Sources */,
+				45D85C5B29AF273C0057FB15 /* SignViewController.swift in Sources */,
 				454BAD3829ADCD4300823368 /* ViewPost.swift in Sources */,
 				454BAD2829ADA66600823368 /* MessageTableViewCell.swift in Sources */,
 				4577551029AAE8C900EA8AFB /* MessageViewController.swift in Sources */,
@@ -305,6 +316,7 @@
 				454BAD2A29ADA68000823368 /* AlarmTableViewCell.swift in Sources */,
 				454BAD3229ADBFDC00823368 /* SettingViewModel.swift in Sources */,
 				454BAD2629ADA64800823368 /* HomeTableViewCell.swift in Sources */,
+				45D85C5E29AF667B0057FB15 /* Utils.swift in Sources */,
 				454BAD3429ADBFE900823368 /* AddPostViewModel.swift in Sources */,
 				454BAD2E29ADBFC800823368 /* MessageViewModel.swift in Sources */,
 				454BAD2129ADA0C800823368 /* SettingViewController.swift in Sources */,

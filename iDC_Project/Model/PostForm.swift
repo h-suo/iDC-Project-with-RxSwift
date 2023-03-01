@@ -11,4 +11,5 @@ struct PostForm: Decodable {
     var title: String
     var description: String
     var comment: [String]
+    var time: String
 }
