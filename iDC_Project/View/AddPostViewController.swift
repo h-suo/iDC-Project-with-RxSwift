@@ -49,11 +49,12 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
         return tf
     }()
     
-    let descriptionLabel: UILabel = {
+    let textCountLabel: UILabel = {
         let dl = UILabel()
         dl.font = UIFont.systemFont(ofSize: 14)
         dl.textColor = .gray
-        dl.numberOfLines = 1
+        dl.textAlignment = .right
+        dl.text = "(0/1000)"
         
         return dl
     }()
@@ -62,13 +63,29 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
         if textView.text == "Please enter your content." {
             textView.text = nil
             textView.textColor = .white
+            textView.becomeFirstResponder()
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let currentText = textView.text ?? ""
+        guard let stringeRange = Range(range, in: currentText) else { return false }
+        
+        let changeText = currentText.replacingCharacters(in: stringeRange, with: text)
+        
+        textCountLabel.text = "(\(changeText.count)/1000)"
+        return changeText.count <= 999
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     // - MARK: Setup View
     func setupView() {
         self.view.backgroundColor = .black
         self.view.addSubview(textView)
+        self.view.addSubview(textCountLabel)
         
         setConstraints()
     }
@@ -80,6 +97,11 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
             make.trailing.equalToSuperview().offset(-20)
             make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.height.equalTo(300)
+        }
+        textCountLabel.snp.makeConstraints { make in
+            make.trailing.equalTo(textView).offset(-12)
+            make.bottom.equalTo(textView).offset(-12)
+            make.width.equalTo(80)
         }
     }
 }

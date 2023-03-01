@@ -56,8 +56,9 @@ class HomeViewController: UITableViewController {
     
     func navigationItemSetting() {
         let rightButtn = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(pressButton(_:)))
+        let searchButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: nil)
         let backButton = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: nil)
-        self.navigationItem.rightBarButtonItem = rightButtn
+        self.navigationItem.rightBarButtonItems = [rightButtn, searchButton]
         self.navigationItem.backBarButtonItem = backButton
     }
     
