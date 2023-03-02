@@ -13,7 +13,7 @@ class HomeViewController: UITableViewController {
     
     let cellId = "HomeTableViewCell"
     
-    let viewModel = HomeViewModel()
+    var viewModel: HomeViewModel?
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -29,15 +29,20 @@ class HomeViewController: UITableViewController {
     
     // MARK: - RX Code
     func setupRX() {
-        viewModel.postObservable
+        viewModel = HomeViewModel.shared
+        
+        viewModel?.postObservable
             .bind(to: tableView.rx.items(cellIdentifier: cellId, cellType: HomeTableViewCell.self)) { index, item, cell in
-                
+
                 cell.titleLabel.text = item.title
                 cell.descriptionLabel.text = item.description
                 cell.timeLabel.text = item.time
                 cell.selectionStyle = .none
             }
             .disposed(by: disposeBag)
+        
+        self.tableView.rx.modelSelected(PostForm.self)
+        
     }
     
     // MARK: - Setup Code

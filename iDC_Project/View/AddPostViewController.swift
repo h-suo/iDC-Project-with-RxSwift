@@ -7,13 +7,17 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 class AddPostViewController: UIViewController, UITextViewDelegate {
+    var viewModel: HomeViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textView.delegate = self
+        
+        viewModel = HomeViewModel.shared
         
         setupNavigation()
         navigationItemSetting()
@@ -29,12 +33,17 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
     }
     
     func navigationItemSetting() {
-        let rightButton = UIBarButtonItem(title: "write", style: .plain, target: self, action: #selector(pressButton(_:)))
+        let rightButton = UIBarButtonItem(title: "write", style: .plain, target: self, action: #selector(writeButtonTapped))
         self.navigationItem.rightBarButtonItem = rightButton
     }
     
-    @IBAction func pressButton(_ sender: UIBarButtonItem) {
+    @IBAction func writeButtonTapped(_ sender: UIBarButtonItem) {
+        let title = titleTextField.text ?? "제목"
+        let description = textView.text ?? "내용"
+        let time = "\(Date())"
+        viewModel?.writePost(title: title, description: description, time: time)
         
+        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Setup UIKit
