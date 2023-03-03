@@ -12,6 +12,7 @@ PODS:
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
   - SnapKit (5.6.0)
+  - Then (3.0.0)
 
 DEPENDENCIES:
   - RxCocoa
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - RxSwift
   - RxViewController
   - SnapKit
+  - Then
 
 SPEC REPOS:
   trunk:
@@ -28,6 +30,7 @@ SPEC REPOS:
     - RxSwift
     - RxViewController
     - SnapKit
+    - Then
 
 SPEC CHECKSUMS:
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
@@ -36,7 +39,8 @@ SPEC CHECKSUMS:
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   RxViewController: 56486fa0afd629a1d6b5ba077f3b8cd9dc31b5d2
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 672bba8ce169a8eec0c307ad7f38257ef338c639
+PODFILE CHECKSUM: 05b4aa89a3550ce94a76d425a858c50e33f52108
 
 COCOAPODS: 1.8.4
