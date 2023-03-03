@@ -32,12 +32,10 @@ class HomeViewController: UITableViewController {
         viewModel = HomeViewModel.shared
         
         viewModel?.postObservable
+            .observe(on: MainScheduler.instance)
+            .filter({ !$0.isEmpty })
             .bind(to: tableView.rx.items(cellIdentifier: cellId, cellType: HomeTableViewCell.self)) { index, item, cell in
-
-                cell.titleLabel.text = item.title
-                cell.descriptionLabel.text = item.description
-                cell.timeLabel.text = item.time
-                cell.selectionStyle = .none
+                cell.updateUI(item)
             }
             .disposed(by: disposeBag)
         

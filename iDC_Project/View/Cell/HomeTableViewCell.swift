@@ -10,6 +10,14 @@ import SnapKit
 
 class HomeTableViewCell: UITableViewCell {
     
+    // MARK: - Setup UI
+    func updateUI(_ posts: PostForm) {
+        self.titleLabel.text = posts.title
+        self.descriptionLabel.text = posts.description
+        self.timeLabel.text = posts.time
+        self.selectionStyle = .none
+    }
+    
     // MARK: - Setup UIKit
     let titleLabel: UILabel = {
         let tl = UILabel()
