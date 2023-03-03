@@ -10,6 +10,7 @@ import SnapKit
 import RxSwift
 
 class AddPostViewController: UIViewController, UITextViewDelegate {
+    
     var viewModel: HomeViewModel?
     
     override func viewDidLoad() {

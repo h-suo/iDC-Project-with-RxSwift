@@ -41,8 +41,18 @@ class HomeViewController: UITableViewController {
             }
             .disposed(by: disposeBag)
         
-        self.tableView.rx.modelSelected(PostForm.self)
-        
+        tableView.rx.modelSelected(PostForm.self)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] post in
+                self?.presentDetail(of: post)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func presentDetail(of post: PostForm) {
+        let detailVC = PostDetailiViewController()
+        viewModel?.selectedPost = post
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     // MARK: - Setup Code
@@ -62,7 +72,7 @@ class HomeViewController: UITableViewController {
     func navigationItemSetting() {
         let rightButtn = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(pressButton(_:)))
         let searchButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: nil)
-        let backButton = UIBarButtonItem(title: "cancel", style: .plain, target: self, action: nil)
+        let backButton = UIBarButtonItem(title: "back", style: .plain, target: self, action: nil)
         self.navigationItem.rightBarButtonItems = [rightButtn, searchButton]
         self.navigationItem.backBarButtonItem = backButton
     }

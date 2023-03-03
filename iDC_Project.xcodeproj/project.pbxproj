@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		43504EE7767E39FBB48F2381 /* Pods_iDC_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0185F4825B9C887EF75F28F /* Pods_iDC_Project.framework */; };
+		45139AEB29B1C59F00B0A7D5 /* PostDetailiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45139AEA29B1C59F00B0A7D5 /* PostDetailiViewController.swift */; };
 		454BAD1F29ADA0B100823368 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD1E29ADA0B100823368 /* AlarmViewController.swift */; };
 		454BAD2129ADA0C800823368 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD2029ADA0C800823368 /* SettingViewController.swift */; };
 		454BAD2329ADA1B700823368 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BAD2229ADA1B700823368 /* AddPostViewController.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		3B2F435EE178C706A92DA3A2 /* Pods-iDC_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDC_Project.release.xcconfig"; path = "Target Support Files/Pods-iDC_Project/Pods-iDC_Project.release.xcconfig"; sourceTree = "<group>"; };
+		45139AEA29B1C59F00B0A7D5 /* PostDetailiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailiViewController.swift; sourceTree = "<group>"; };
 		454BAD1E29ADA0B100823368 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		454BAD2029ADA0C800823368 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		454BAD2229ADA1B700823368 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				45D85C5A29AF273C0057FB15 /* SignViewController.swift */,
 				4577550D29AAE27B00EA8AFB /* TabBarController.swift */,
 				457754FD29A7813A00EA8AFB /* HomeViewController.swift */,
+				45139AEA29B1C59F00B0A7D5 /* PostDetailiViewController.swift */,
 				4577550F29AAE8C900EA8AFB /* MessageViewController.swift */,
 				454BAD1E29ADA0B100823368 /* AlarmViewController.swift */,
 				454BAD2029ADA0C800823368 /* SettingViewController.swift */,
@@ -307,6 +310,7 @@
 				454BAD1F29ADA0B100823368 /* AlarmViewController.swift in Sources */,
 				45D85C5B29AF273C0057FB15 /* SignViewController.swift in Sources */,
 				454BAD3829ADCD4300823368 /* ViewPost.swift in Sources */,
+				45139AEB29B1C59F00B0A7D5 /* PostDetailiViewController.swift in Sources */,
 				454BAD2829ADA66600823368 /* MessageTableViewCell.swift in Sources */,
 				4577551029AAE8C900EA8AFB /* MessageViewController.swift in Sources */,
 				454BAD2329ADA1B700823368 /* AddPostViewController.swift in Sources */,
