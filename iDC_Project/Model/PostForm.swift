@@ -15,6 +15,8 @@ struct PostForm: Decodable {
     var time: String
 }
 
+let a = 0
+
 extension PostForm {
     static let EMPTY = PostForm(id: 0, title: "title", description: "description", comment: [], time: "00:00")
 }
