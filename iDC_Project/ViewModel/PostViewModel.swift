@@ -8,9 +8,9 @@
 import Foundation
 import RxSwift
 
-class HomeViewModel {
+class PostViewModel {
     
-    static let shared = HomeViewModel()
+    static let shared = PostViewModel()
     
     let disposeBag = DisposeBag()
     

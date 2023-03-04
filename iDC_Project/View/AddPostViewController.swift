@@ -11,14 +11,14 @@ import RxSwift
 
 class AddPostViewController: UIViewController, UITextViewDelegate {
     
-    var viewModel: HomeViewModel?
+    var viewModel: PostViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textView.delegate = self
         
-        viewModel = HomeViewModel.shared
+        viewModel = PostViewModel.shared
         
         setupNavigation()
         navigationItemSetting()

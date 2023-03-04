@@ -9,12 +9,12 @@ import UIKit
 
 class PostDetailiViewController: UIViewController {
 
-    var viewModel: HomeViewModel?
+    var viewModel: PostViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        viewModel = HomeViewModel.shared
+        viewModel = PostViewModel.shared
         
         setupNavigation()
         setupUI()

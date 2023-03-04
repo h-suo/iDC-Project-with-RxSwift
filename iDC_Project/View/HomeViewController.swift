@@ -13,7 +13,7 @@ class HomeViewController: UITableViewController {
     
     let cellId = "HomeTableViewCell"
     
-    var viewModel: HomeViewModel?
+    var viewModel: PostViewModel?
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class HomeViewController: UITableViewController {
     
     // MARK: - RX Code
     func setupRX() {
-        viewModel = HomeViewModel.shared
+        viewModel = PostViewModel.shared
         
         viewModel?.postObservable
             .observe(on: MainScheduler.instance)
