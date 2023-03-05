@@ -16,7 +16,7 @@ class SettingViewController: UIViewController {
         setupNavigation()
     }
     
-    // MARK: - Setup Code
+    // MARK: - Setup Navigation
     func setupNavigation() {
         self.navigationItem.title = "Setting"
         self.navigationController?.navigationBar.backgroundColor = .black

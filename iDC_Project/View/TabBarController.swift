@@ -16,7 +16,7 @@ class TabBarController: UITabBarController {
         setupTabBarItem()
     }
     
-    // MARK: - Setup Code
+    // MARK: - Setup TapBar
     func setupTabBar() {
         self.tabBar.barTintColor = .black
         self.tabBar.tintColor = .white

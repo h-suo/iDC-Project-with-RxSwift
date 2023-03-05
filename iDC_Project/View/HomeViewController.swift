@@ -21,7 +21,7 @@ class HomeViewController: UITableViewController {
         
         self.tableView.dataSource = nil
         
-        setupUi()
+        setupUI()
         setupNavigation()
         navigationItemSetting()
         setupRX()
@@ -54,12 +54,19 @@ class HomeViewController: UITableViewController {
     }
     
     // MARK: - Setup Code
-    func setupUi() {
+    @IBAction func pressButton(_ sender: UIBarButtonItem) {
+        let addView = AddPostViewController()
+        self.navigationController?.pushViewController(addView, animated: true)
+    }
+    
+    // MARK: - Setup UI
+    func setupUI() {
         self.view.backgroundColor = .black
         self.tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: cellId)
         self.tableView.rowHeight = 80
     }
     
+    // MARK: - Setup Navigation
     func setupNavigation() {
         self.navigationController?.navigationBar.backgroundColor = .black
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -73,11 +80,6 @@ class HomeViewController: UITableViewController {
         let backButton = UIBarButtonItem(title: "back", style: .plain, target: self, action: nil)
         self.navigationItem.rightBarButtonItems = [rightButtn, searchButton]
         self.navigationItem.backBarButtonItem = backButton
-    }
-    
-    @IBAction func pressButton(_ sender: UIBarButtonItem) {
-        let addView = AddPostViewController()
-        self.navigationController?.pushViewController(addView, animated: true)
     }
 }
 

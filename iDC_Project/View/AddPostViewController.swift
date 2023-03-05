@@ -22,10 +22,11 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
         
         setupNavigation()
         navigationItemSetting()
-        setupView()
+        setupUI()
+        setupConstraints()
     }
     
-    // MARK: - Setup Code
+    // MARK: - Setup Navigation
     func setupNavigation() {
         self.navigationItem.title = "Add Post"
         self.navigationController?.navigationBar.backgroundColor = .black
@@ -38,6 +39,7 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
         self.navigationItem.rightBarButtonItem = rightButton
     }
     
+    // MARK: - Setup Code
     @IBAction func writeButtonTapped(_ sender: UIBarButtonItem) {
         let title = titleTextField.text ?? "제목"
         let description = textView.text ?? "내용"
@@ -46,38 +48,6 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
         
         navigationController?.popViewController(animated: true)
     }
-    
-    // MARK: - Setup UIKit
-    let titleTextField: UITextField = {
-        let ttf = UITextField()
-        ttf.borderStyle = .roundedRect
-        ttf.placeholder = "title"
-        ttf.backgroundColor = .systemFill
-        ttf.font = .systemFont(ofSize: 20)
-        
-        return ttf
-    }()
-    
-    let textView: UITextView = {
-        let tf = UITextView()
-        tf.backgroundColor = .systemFill
-        tf.font = .systemFont(ofSize: 18)
-        tf.text = "Please enter your content."
-        tf.textColor = .systemGray2
-        tf.layer.cornerRadius = 4
-        
-        return tf
-    }()
-    
-    let textCountLabel: UILabel = {
-        let dl = UILabel()
-        dl.font = UIFont.systemFont(ofSize: 14)
-        dl.textColor = .gray
-        dl.textAlignment = .right
-        dl.text = "(0/1000)"
-        
-        return dl
-    }()
     
     // MARK: - Setup TextView
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -102,18 +72,38 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
         self.view.endEditing(true)
     }
     
-    // MARK: - Setup View
-    func setupView() {
+    // MARK: - Setup UI
+    let titleTextField = UITextField().then {
+        $0.borderStyle = .roundedRect
+        $0.placeholder = "title"
+        $0.backgroundColor = .systemFill
+        $0.font = .systemFont(ofSize: 20)
+    }
+    
+    let textView = UITextView().then {
+        $0.backgroundColor = .systemFill
+        $0.font = .systemFont(ofSize: 18)
+        $0.text = "Please enter your content."
+        $0.textColor = .systemGray2
+        $0.layer.cornerRadius = 4
+    }
+    
+    let textCountLabel = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 14)
+        $0.textColor = .gray
+        $0.textAlignment = .right
+        $0.text = "(0/1000)"
+    }
+    
+    func setupUI() {
         self.view.backgroundColor = .black
         self.view.addSubview(titleTextField)
         self.view.addSubview(textView)
         self.view.addSubview(textCountLabel)
-        
-        setConstraints()
     }
     
     // MARK: - Setup Constraints
-    func setConstraints() {
+    func setupConstraints() {
         titleTextField.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(12)
             make.trailing.equalToSuperview().offset(-12)

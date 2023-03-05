@@ -16,7 +16,7 @@ class AlarmViewController: UITableViewController {
         setupNavigation()
     }
     
-    // MARK: - Setup Code
+    // MARK: - Setup Navigation
     func setupNavigation() {
         self.navigationItem.title = "Alarm"
         self.navigationController?.navigationBar.backgroundColor = .black

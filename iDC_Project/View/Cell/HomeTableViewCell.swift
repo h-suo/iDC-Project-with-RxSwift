@@ -10,7 +10,17 @@ import SnapKit
 
 class HomeTableViewCell: UITableViewCell {
     
-    // MARK: - Setup UI
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupUI()
+        setupConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - update UI
     func updateUI(_ posts: PostForm) {
         self.titleLabel.text = posts.title
         self.descriptionLabel.text = posts.description
@@ -18,55 +28,39 @@ class HomeTableViewCell: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    // MARK: - Setup UIKit
-    let titleLabel: UILabel = {
-        let tl = UILabel()
-        tl.font = UIFont.systemFont(ofSize: 18)
-        tl.textColor = .white
-        tl.numberOfLines = 1
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
         
-        return tl
-    }()
-    
-    let descriptionLabel: UILabel = {
-        let dl = UILabel()
-        dl.font = UIFont.systemFont(ofSize: 14)
-        dl.textColor = .gray
-        dl.numberOfLines = 1
-        
-        return dl
-    }()
-    
-    let timeLabel: UILabel = {
-        let tl = UILabel()
-        tl.font = UIFont.systemFont(ofSize: 14)
-        tl.textColor = .gray
-        
-        return tl
-    }()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupView()
     }
     
-    // MARK: - Setup View
-    func setupView() {
+    // MARK: - Setup UI
+    let titleLabel = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 18)
+        $0.textColor = .white
+        $0.numberOfLines = 1
+    }
+    
+    let descriptionLabel = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 14)
+        $0.textColor = .gray
+        $0.numberOfLines = 1
+    }
+    
+    let timeLabel = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 14)
+        $0.textColor = .gray
+    }
+    
+    func setupUI() {
         self.backgroundColor = .black
         
         self.addSubview(titleLabel)
         self.addSubview(descriptionLabel)
         self.addSubview(timeLabel)
-        
-        setConstraints()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - Setup Constraints
-    func setConstraints() {
+    func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.bottom.equalTo(descriptionLabel.snp.top).offset(-4)
             make.leading.equalToSuperview().offset(20)
@@ -81,10 +75,5 @@ class HomeTableViewCell: UITableViewCell {
             make.top.equalTo(descriptionLabel.snp.bottom).offset(4)
             make.leading.equalToSuperview().offset(20)
         }
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
     }
 }

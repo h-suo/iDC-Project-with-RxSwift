@@ -17,62 +17,51 @@ class PostDetailiViewController: UIViewController {
         viewModel = PostViewModel.shared
         
         setupNavigation()
+        updateData()
         setupUI()
-        setupView()
+        setupConstraints()
     }
     
-    // MARK: - Setup Code
+    // MARK: - Setup Navigation
     func setupNavigation() {
         self.navigationController?.navigationBar.backgroundColor = .black
         self.navigationController?.overrideUserInterfaceStyle = .dark
         self.navigationItem.largeTitleDisplayMode = .never
     }
     
-    func setupUI() {
+    // MARK: - Rx Code
+    func updateData() {
         let post = viewModel?.selectedPost
         titleLabel.text = post?.title
         tiemLabel.text = post?.time
         textView.text = post?.description
     }
     
-    // MARK: - Setup UIKit
-    let titleLabel: UILabel = {
-        let tl = UILabel()
-        tl.font = .systemFont(ofSize: 20)
-
-        return tl
-    }()
+    // MARK: - Setup UI
+    let titleLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 20)
+    }
     
-    let tiemLabel: UILabel = {
-        let tl = UILabel()
-        tl.font = UIFont.systemFont(ofSize: 14)
-        tl.textColor = .gray
-        
-        return tl
-    }()
+    let tiemLabel = UILabel().then {
+        $0.font = UIFont.systemFont(ofSize: 14)
+        $0.textColor = .gray
+    }
 
-    let textView: UITextView = {
-        let tf = UITextView()
-//        tf.backgroundColor = .systemFill
-        tf.font = .systemFont(ofSize: 18)
-        tf.textColor = .lightGray
-        tf.isEditable = false
-        
-        return tf
-    }()
+    let textView = UITextView().then {
+        $0.font = .systemFont(ofSize: 18)
+        $0.textColor = .lightGray
+        $0.isEditable = false
+    }
 
-    // MARK: - Setup View
-    func setupView() {
+    func setupUI() {
         self.view.backgroundColor = .black
         self.view.addSubview(titleLabel)
         self.view.addSubview(tiemLabel)
         self.view.addSubview(textView)
-
-        setConstraints()
     }
 
     // MARK: - Setup Constraints
-    func setConstraints() {
+    func setupConstraints() {
         titleLabel.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)

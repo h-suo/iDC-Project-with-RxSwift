@@ -16,7 +16,7 @@ class MessageViewController: UITableViewController {
         setupNavigation()
     }
     
-    // MARK: - Setup Code
+    // MARK: - Setup Navigation
     func setupNavigation() {
         self.navigationItem.title = "Message"
         self.navigationController?.navigationBar.backgroundColor = .black

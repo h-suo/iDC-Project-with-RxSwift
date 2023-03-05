@@ -6,21 +6,17 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 
 class SignViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        setupView()
+        setupUI()
+        setupConstraints()
         LoginButton.addTarget(self, action: #selector(singInButtonTapped), for: .touchUpInside)
-    }
-    
-    @objc func singInButtonTapped(_ sender: UIButton) {
-        let tapBarVC = TabBarController()
-        tapBarVC.modalPresentationStyle = .fullScreen
-        
-        self.present(tapBarVC, animated: true)
     }
     
     // MARK: - RX Code
@@ -34,35 +30,33 @@ class SignViewController: UIViewController {
         self.navigationController?.pushViewController(addView, animated: true)
     }
     
-    // MARK: - Setup UIKit
-    let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.image = UIImage(named: "IMG_1622")
+    @objc func singInButtonTapped(_ sender: UIButton) {
+        let tapBarVC = TabBarController()
+        tapBarVC.modalPresentationStyle = .fullScreen
         
-        return iv
-    }()
+        self.present(tapBarVC, animated: true)
+    }
     
-    let LoginButton: UIButton = {
-        let lb = UIButton(type: .roundedRect)
-        lb.backgroundColor = .white
-        lb.layer.cornerRadius = 4
-        lb.setTitle(" Sign in with Apple", for: .normal)
-        lb.setTitleColor(.black, for: .normal)
-        
-        return lb
-    }()
+    // MARK: - Setup UI
+    let imageView = UIImageView().then {
+        $0.image = UIImage(named: "IMG_1622")
+    }
     
-    // MARK: - Setup View
-    func setupView() {
+    let LoginButton = UIButton().then {
+        $0.backgroundColor = .white
+        $0.layer.cornerRadius = 4
+        $0.setTitle(" Sign in with Apple", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
+    }
+    
+    func setupUI() {
         self.view.backgroundColor = .black
         self.view.addSubview(imageView)
         self.view.addSubview(LoginButton)
-        
-        setConstraints()
     }
     
     // MARK: - Setup Constraints
-    func setConstraints() {
+    func setupConstraints() {
         imageView.snp.makeConstraints { make in
             make.width.equalTo(120)
             make.height.equalTo(120)
