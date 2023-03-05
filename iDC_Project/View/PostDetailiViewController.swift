@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Then
+import SnapKit
 
 class PostDetailiViewController: UIViewController {
 
@@ -22,19 +24,19 @@ class PostDetailiViewController: UIViewController {
         setupConstraints()
     }
     
-    // MARK: - Setup Navigation
-    func setupNavigation() {
-        self.navigationController?.navigationBar.backgroundColor = .black
-        self.navigationController?.overrideUserInterfaceStyle = .dark
-        self.navigationItem.largeTitleDisplayMode = .never
-    }
-    
     // MARK: - Rx Code
     func updateData() {
         let post = viewModel?.selectedPost
         titleLabel.text = post?.title
         tiemLabel.text = post?.time
         textView.text = post?.description
+    }
+    
+    // MARK: - Setup Navigation
+    func setupNavigation() {
+        self.navigationController?.navigationBar.backgroundColor = .black
+        self.navigationController?.overrideUserInterfaceStyle = .dark
+        self.navigationItem.largeTitleDisplayMode = .never
     }
     
     // MARK: - Setup UI

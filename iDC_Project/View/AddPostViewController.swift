@@ -7,11 +7,14 @@
 
 import UIKit
 import SnapKit
+import Then
 import RxSwift
+import RxCocoa
 
 class AddPostViewController: UIViewController, UITextViewDelegate {
     
     var viewModel: PostViewModel?
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,24 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
         navigationItemSetting()
         setupUI()
         setupConstraints()
+        setupRx()
+    }
+    
+    // MARK: - Rx Code
+    func setupRx() {
+        navigationItem.rightBarButtonItem?.rx.tap
+            .subscribe(onNext: {
+                self.presentAddPost()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func presentAddPost() {
+        let title = self.titleTextField.text ?? "제목"
+        let description = self.textView.text ?? "내용"
+        let time = "\(Date())"
+        viewModel?.writePost(title: title, description: description, time: time)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Setup Navigation
@@ -35,18 +56,8 @@ class AddPostViewController: UIViewController, UITextViewDelegate {
     }
     
     func navigationItemSetting() {
-        let rightButton = UIBarButtonItem(title: "write", style: .plain, target: self, action: #selector(writeButtonTapped))
+        let rightButton = UIBarButtonItem(title: "write", style: .plain, target: self, action: nil)
         self.navigationItem.rightBarButtonItem = rightButton
-    }
-    
-    // MARK: - Setup Code
-    @IBAction func writeButtonTapped(_ sender: UIBarButtonItem) {
-        let title = titleTextField.text ?? "제목"
-        let description = textView.text ?? "내용"
-        let time = "\(Date())"
-        viewModel?.writePost(title: title, description: description, time: time)
-        
-        navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Setup TextView

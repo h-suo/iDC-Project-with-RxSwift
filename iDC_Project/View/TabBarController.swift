@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class TabBarController: UITabBarController {
     
@@ -24,24 +26,25 @@ class TabBarController: UITabBarController {
     }
     
     func setupTabBarItem() {
+        
         let firstVC = UINavigationController(rootViewController: HomeViewController())
-        firstVC.tabBarItem.selectedImage = UIImage(systemName: "house")
-        firstVC.tabBarItem.image = UIImage(systemName: "house.fill")
+        firstVC.tabBarItem.image = UIImage(systemName: "house")
+        firstVC.tabBarItem.selectedImage = UIImage(systemName: "house.fill")
         firstVC.tabBarItem.title = "home"
         
         let secondVC = UINavigationController(rootViewController: MessageViewController())
-        secondVC.view.backgroundColor = .black
         secondVC.tabBarItem.image = UIImage(systemName: "message")
+        secondVC.tabBarItem.selectedImage = UIImage(systemName: "message.fill")
         secondVC.tabBarItem.title = "message"
         
         let thirdVC = UINavigationController(rootViewController: AlarmViewController())
-        thirdVC.view.backgroundColor = .black
-        thirdVC.tabBarItem.image = UIImage(systemName: "bell.fill")
+        thirdVC.tabBarItem.image = UIImage(systemName: "bell")
+        thirdVC.tabBarItem.selectedImage = UIImage(systemName: "bell.fill")
         thirdVC.tabBarItem.title = "alarm"
         
         let fourthVC = UINavigationController(rootViewController: SettingViewController())
-        fourthVC.view.backgroundColor = .black
         fourthVC.tabBarItem.image = UIImage(systemName: "gearshape")
+        fourthVC.tabBarItem.selectedImage = UIImage(systemName: "gearshape.fill")
         fourthVC.tabBarItem.title = "setting"
         
         viewControllers = [firstVC, secondVC, thirdVC, fourthVC]

@@ -24,11 +24,11 @@ class HomeViewController: UITableViewController {
         setupUI()
         setupNavigation()
         navigationItemSetting()
-        setupRX()
+        setupRx()
     }
     
-    // MARK: - RX Code
-    func setupRX() {
+    // MARK: - Rx Code
+    func setupRx() {
         viewModel = PostViewModel.shared
         
         viewModel?.postObservable
@@ -45,18 +45,19 @@ class HomeViewController: UITableViewController {
                 self?.presentDetail(of: post)
             })
             .disposed(by: disposeBag)
+        
+        navigationItem.rightBarButtonItem?.rx.tap
+            .map({ _ in AddPostViewController()})
+            .subscribe(onNext: { [weak self] VC in
+                self?.navigationController?.pushViewController(VC, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     func presentDetail(of post: PostForm) {
         let detailVC = PostDetailiViewController()
         viewModel?.selectedPost = post
         navigationController?.pushViewController(detailVC, animated: true)
-    }
-    
-    // MARK: - Setup Code
-    @IBAction func pressButton(_ sender: UIBarButtonItem) {
-        let addView = AddPostViewController()
-        self.navigationController?.pushViewController(addView, animated: true)
     }
     
     // MARK: - Setup UI
@@ -75,7 +76,7 @@ class HomeViewController: UITableViewController {
     }
     
     func navigationItemSetting() {
-        let rightButtn = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(pressButton(_:)))
+        let rightButtn = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: nil)
         let searchButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: nil)
         let backButton = UIBarButtonItem(title: "back", style: .plain, target: self, action: nil)
         self.navigationItem.rightBarButtonItems = [rightButtn, searchButton]

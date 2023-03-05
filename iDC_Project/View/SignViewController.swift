@@ -8,41 +8,38 @@
 import UIKit
 import Then
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SignViewController: UIViewController {
+    
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
         setupUI()
         setupConstraints()
-        LoginButton.addTarget(self, action: #selector(singInButtonTapped), for: .touchUpInside)
+        setupRx()
     }
     
-    // MARK: - RX Code
-    func setupRX() {
+    // MARK: - Rx Code
+    func setupRx() {
+        SingInButton.rx.tap
+            .map({ _ in TabBarController()})
+            .subscribe(onNext: { [weak self] VC in
+                VC.modalPresentationStyle = .fullScreen
+                self?.present(VC, animated: true)
+            })
+            .disposed(by: disposeBag)
+    }
         
-    }
-    
-    // MARK: - Setup Code
-    @IBAction func pressButton(_ sender: UIBarButtonItem) {
-        let addView = AddPostViewController()
-        self.navigationController?.pushViewController(addView, animated: true)
-    }
-    
-    @objc func singInButtonTapped(_ sender: UIButton) {
-        let tapBarVC = TabBarController()
-        tapBarVC.modalPresentationStyle = .fullScreen
-        
-        self.present(tapBarVC, animated: true)
-    }
-    
     // MARK: - Setup UI
     let imageView = UIImageView().then {
         $0.image = UIImage(named: "IMG_1622")
     }
     
-    let LoginButton = UIButton().then {
+    let SingInButton = UIButton().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 4
         $0.setTitle(" Sign in with Apple", for: .normal)
@@ -52,7 +49,7 @@ class SignViewController: UIViewController {
     func setupUI() {
         self.view.backgroundColor = .black
         self.view.addSubview(imageView)
-        self.view.addSubview(LoginButton)
+        self.view.addSubview(SingInButton)
     }
     
     // MARK: - Setup Constraints
@@ -63,8 +60,8 @@ class SignViewController: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(300)
         }
-        LoginButton.snp.makeConstraints { make in
-            make.width.equalTo(168)
+        SingInButton.snp.makeConstraints { make in
+            make.width.equalTo(200)
             make.height.equalTo(40)
             make.centerX.equalToSuperview()
             make.top.equalTo(imageView.snp.bottom).offset(40)
